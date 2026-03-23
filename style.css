@@ -1842,9 +1842,15 @@ button {
     border-top: 1px solid rgba(176, 138, 87, 0.2);
 }
 
-.footer-main {
-    padding-top: 49px;
-    padding-bottom: 16px;
+div.footer-main {
+    padding-top: 35px;
+    padding-bottom: 30px;
+}
+
+.footer-container, 
+footer > div:nth-of-type(1) > div {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .footer-container {
@@ -1856,7 +1862,7 @@ button {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-10);
     align-items: start;
-    padding-bottom: 26px;
+    padding-bottom: 0px;
 }
 
 .footer-logo {
@@ -1952,7 +1958,13 @@ button {
     padding-bottom: 0;
 }
 
-.footer-credits-left,
+.footer-credits-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
 .footer-credits-right {
     font-size: var(--text-xs);
     color: rgba(255, 255, 255, 0.5);
@@ -1962,25 +1974,36 @@ button {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0;
+    gap: 0px;
     margin: 0;
     font-size: var(--text-xs);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-legal-links a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
     transition: color var(--transition-base);
+    font-size: 11px;
 }
 
 .footer-legal-links a:hover {
     color: var(--color-gold);
 }
 
+.footer-cookie-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cookie-toggle-icon {
+    flex-shrink: 0;
+}
+
 .footer-sep {
-    margin: 0 8px;
-    opacity: 0.4;
+    margin: 0 10px;
+    opacity: 0.3;
 }
 
 .footer-credits-right {
@@ -2008,7 +2031,7 @@ footer>div:nth-of-type(1)>div>div:nth-of-type(1)>a>img {
 
 footer>div:nth-of-type(1)>div>div:nth-of-type(2) {
     padding-left: 20px;
-    margin-bottom: 14px;
+    margin-bottom: 0px;
     margin-left: 65px;
 }
 
@@ -2415,4 +2438,113 @@ div.footer-contact {
 .btn-flutuante-whatsapp:hover {
     transform: scale(1.05);
     color: #FFF;
+}
+/* ========================================
+   COOKIES & LEGAL (RODAPÉ)
+   ======================================== */
+.footer-legal-container {
+    padding-top: 0 !important;
+    padding-bottom: 24px !important;
+    justify-content: center !important;
+}
+
+.footer-legal-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-legal-links a {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-legal-links a:hover {
+    color: var(--color-gold);
+}
+
+/* Botão Flutuante Cookies */
+.ck-prefs-btn {
+    position: fixed;
+    bottom: 28px; /* Lado oposto ao WhatsApp se o WhatsApp estiver na direita */
+    left: 28px;
+    width: 52px;
+    height: 52px;
+    background-color: #1a1a1a;
+    color: #D9B76A;
+    border: 1px solid rgba(217, 183, 106, 0.3);
+    border-radius: 50%;
+    display: none; /* JS controla visibilidade */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+    z-index: 8999;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(10px) scale(0.9);
+}
+
+.ck-prefs-btn.ck-prefs-btn--visible {
+    display: flex;
+    animation: ckFadeInUp 0.6s forwards;
+}
+
+@keyframes ckFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.ck-prefs-btn:hover {
+    background-color: #D9B76A;
+    color: #000;
+    border-color: #D9B76A;
+    transform: translateY(-5px) scale(1.08) rotate(15deg);
+}
+
+.ck-prefs-btn:active {
+    transform: translateY(-2px) scale(0.95);
+}
+
+.ck-prefs-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 991px) {
+    .footer-legal-container {
+        justify-content: center !important;
+        padding-bottom: 30px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-legal-container {
+        padding-left: 0 !important;
+        text-align: center !important;
+    }
+
+    .footer-legal-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .ck-prefs-btn {
+        bottom: 24px;
+        left: 24px;
+        width: 46px;
+        height: 46px;
+    }
 }
