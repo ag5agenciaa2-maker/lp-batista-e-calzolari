@@ -23,4 +23,4 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
-Sitemap: https://www.batistaecalzolari.com.br/sitemap.xml
+Sitemap: https://www.batistaecalzolari.ag5agencia.site/sitemap.xml
