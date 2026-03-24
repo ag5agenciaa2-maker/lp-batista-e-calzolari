@@ -1970,6 +1970,12 @@ footer > div:nth-of-type(1) > div {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.footer-copyright {
+    font-size: 11px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.4);
+}
+
 .footer-legal-links {
     display: flex;
     flex-wrap: wrap;
