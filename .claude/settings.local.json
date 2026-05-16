@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Webflow__data_sites_tool",
+      "Bash(find \"c:\\\\Users\\\\mauri\\\\Documents\\\\00 Processo Landing Pages\\\\02 - LP \\(Processando\\)\\\\LP - Batista e Calzolari Advogados\" -type f \\\\\\( -name \"*.html\" -o -name \"*.css\" -o -name \"*.json\" \\\\\\))",
+      "Bash(grep -E \"\\\\.\\(html|css|json\\)$\")",
+      "Bash(find \"c:\\\\Users\\\\mauri\\\\Documents\\\\00 Processo Landing Pages\\\\02 - LP \\(Processando\\)\\\\LP - Batista e Calzolari Advogados\" -name \"*.md\" -type f)"
+    ]
+  }
+}
